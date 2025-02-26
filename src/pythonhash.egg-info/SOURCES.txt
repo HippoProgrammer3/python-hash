@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+src/pythonhash/__init__.py
+src/pythonhash.egg-info/PKG-INFO
+src/pythonhash.egg-info/SOURCES.txt
+src/pythonhash.egg-info/dependency_links.txt
+src/pythonhash.egg-info/top_level.txt

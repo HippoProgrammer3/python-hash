@@ -1,0 +1,16 @@
+Metadata-Version: 2.2
+Name: pythonhash
+Version: 0.0.1
+Summary: A terrible hashing library
+Author-email: Benjamin Porter <bcgcustomerservices@gmail.com>
+Project-URL: Homepage, https://github.com/HippoProgrammer3/python-hash
+Project-URL: Issues, https://github.com/HippoProgrammer3/python-hash/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# python-hash
+A very bad hashing library built in Python
