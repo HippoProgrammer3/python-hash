@@ -1,5 +1,7 @@
 # An incredibly simple and bad hashing algorithm library.
 from string import printable
+from math import ceil as roundUp
+from random import choice
 
 validCharacters = list(printable)
 
@@ -15,25 +17,30 @@ def reverseString(string):
     return reversedString
 
 def php256(data: str):
-    if len(data) > 256:
-        raise HashingError('Input is too long')
+    dataLength = len(data)
+    blockLength = roundUp(dataLength / 256)
+
+    excessLength = blockLength - (dataLength % blockLength)
+
+    for i in excessLength:
+        data += ';'
     
+    blockList = []
+    charCounter = 0
+    block = ''
     for char in data:
-        if not char in validCharacters:
-            raise HashingError('Input contains invalid characters')
-
-    hashableData = data.zfill(256)
-
-    hashedData = []
-    for char in data:
-        hashedData.append(hex(validCharacters.index(char)))
+        charCounter += 0
+        block += char
+        if charCounter == 3:
+            blockList.append(block)
+            charCounter = 0
+            block = ''
     
-    moreHashedData = []
-    for value in hashedData:
-        moreHashedData.append(reverseString(value))
+    modList = []
 
-    hashedString = ''
-    for value in moreHashedData:
-        hashedString += value
-    
-    return hashedString
+    for block in blockList:
+        blockTotal = 0
+        for char in block:
+            blockTotal += validCharacters.index(char)
+        blockTotal = str(blockTotal)
+        # zfill with zeros to 4, add to modList as string
